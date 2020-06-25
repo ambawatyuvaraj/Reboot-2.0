@@ -1,0 +1,19 @@
+Problem #1     Block System call : 
+
+
+
+
+
+
+
+
+
+
+
+Problem #2 :  play with directory 
+  
+    Q->   Create a directory without name from command line
+    Ans-> mkdir ' '
+    
+    Q->   Create a directory with name "-okgoogle"
+    Ans-> mkdir ' '-okgoogle
