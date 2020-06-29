@@ -16,4 +16,4 @@ Problem #2 :  play with directory
     Ans-> mkdir ' '
     
     Q->   Create a directory with name "-okgoogle"
-    Ans-> mkdir ' '-okgoogle
+    Ans-> mkdir -- -okgoogle
