@@ -23,3 +23,47 @@ Problem #2 :  play with directory
 Problem#3 : Problem #3 : Create a directory structure [ Note: You are only allowed to use a single command and only one time ]
       
      Ans-> mkdir -p A/{B/{G/K/reboot.txt,H/J/reboot.txt},C/{I/J/reboot.txt,J/L/reboot.txt},D/{F/L/reboot.txt,E/M/reboot.txt}}
+     
+
+Problem #4.  Share and Files and Folder
+    
+     Q-> Create two users name jack and Jill  from command line
+     Ans:  -> adduser jack [adduser command to create the user ]
+           -> passwd jack  [ passwd command to set the password for the user ]
+           
+           -> adduser jill [adduser command to create the user ]
+           -> passwd jill  [ passwd command to set the password for the user ]
+           
+     Q->login with jack user and create a file name  jack.txt using vim editor and write "hello jack"
+     Ans:     -> su - jack  [su to switch user ]
+               -> vim jack.txt [Press i to enter the insert mode and write "hello jack" and then Press escape and :wq to write and quit the file.]
+     
+     Q-> From jack user also create two directories name jack1 & jack2 
+     Ans-> mkdir jack1 jack2
+     
+     Q-> Now login from Jill user and create a file. Jill.txt using vim editor and write "hey jiil"
+     Ans:      -> su - jill [su to switch user]
+                -> vim jill.txt [Press i to enter the insert mode and write "hey jill" and then Press Escape and :wq to write and quit the file.]
+     
+     Q-> From Jill also create two directoires named jill1 & jill2 
+     Ans-> mkdir jill1 jill2
+     
+     Q-> Swap these files and directories in between users  and to swap don't use root account.
+     Ans: -> There are a few different ways to do this like adding both the users to same group etc. etc. but it is a recommended way. So we'll use ACL [ Access Control List ]
+              to do this.
+          -> We'll be using just one command:
+                  1->  setfacl [Set File Access Control Lists To Set The Permissions ]  
+                  
+          -> First we'll do it for user "jack"
+              -> su -jack [Switch to user jack]
+              =>Since we already created all the files/folders we'll proceed with the permissions
+              -> setfacl -m u:jill:rwx /home/jack [ -m is used to modify the current ACL(s) of file(s) , u is for user and rwx = read-write-execute permissions.]
+              
+              =>Now we'll do the same for user "jill"
+              -> su - jill [ Switch to user Jill ]
+              -> setfacl -m u:jack:rwx /home/jill
+          
+          => Now We'll test if it works correctly or not, To do this we'll create a file called jill2.txt inside Jack's home.
+              
+              ->touch /home/jack/jill2.txt
+              ->Now use the ls command to check. Jill2.txt should be there.
