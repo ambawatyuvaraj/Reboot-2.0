@@ -1,9 +1,9 @@
-Problem #1     Block System call : 
+Problem #1     Block System call : [ INCOMPLETE ]
   
     We can block syscalls using:
       ->SElinux
       ->Seccomp
-      
+      -> or use ptrace(2) or play ld.so tricks (LD_PRELOAD or LD_LIBRARY_PATH ones) or patch your libc 
 
 
 
