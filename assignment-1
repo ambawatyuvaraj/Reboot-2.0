@@ -1,10 +1,9 @@
 Problem #1     Block System call : 
-
-
-
-
-
-
+  
+    We can block syscalls using:
+      ->SElinux
+      ->Seccomp
+      
 
 
 
