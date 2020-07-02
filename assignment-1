@@ -72,7 +72,7 @@ Problem#5: Play With Files and Directories
     
       Q-> Create  3 files named   abc.txt  ok  fine  g.txt  /tmp directory 
       Ans-> cd /tmp/ 
-            touch abc.txt ok fine g.txt
+            touch abc.txt ok\ fine g.txt
        
       Q-> Create  4  directories   aa aaa aaaa  under  /tmp directory 
       Ans-> mkdir aa aaa aaaa under
