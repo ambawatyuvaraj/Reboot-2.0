@@ -66,3 +66,31 @@ Problem #4.  Share and Files and Folder
               
               ->touch /home/jack/jill2.txt
               ->Now use the ls command to check. Jill2.txt should be there.
+           
+ 
+Problem#5: Play With Files and Directories 
+    
+      Q-> Create  3 files named   abc.txt  ok  fine  g.txt  /tmp directory 
+      Ans-> cd /tmp/ 
+            touch abc.txt ok fine g.txt
+       
+      Q-> Create  4  directories   aa aaa aaaa  under  /tmp directory 
+      Ans-> mkdir aa aaa aaaa under
+      
+      Q-> Give ls command to  list the content of  /tmp directory 
+      Ans-> ls [Since we're alr in /tmp dir]
+      
+      Q-> Make sure it will only list the content (file|directory)  having 2 char in their name.
+      Ans-> ls -l ?? [ ? represents any single character.]
+      
+
+Problem#5: Run command without any output 
+  
+      Q-> Open terminal and type any command, once you press enter your output of given command must not  print you are not allowed to redirect output anywhere 
+      Ans-> We can do this in two different ways
+                1. Using "screen" 
+                2. By using "--dump-strings"
+                
+                1: screen -dm ls [Command will execute with no output.]
+                2: bash --dump-strings
+                   date [No Output]
